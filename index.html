@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Garance Guinet, conceptrice développeuse d'applications en formation CDA à Montpellier. Java, JPA/Hibernate, Spring, Node.js, JavaScript et SQL.">
+  <title>Garance Guinet — Conceptrice développeuse d'applications</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="./assets/js/main.js" defer></script>
+</head>
+
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Retour en haut">
+      <span class="brand-mark">GG</span>
+      <span class="brand-name">Garance Guinet</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+      Menu
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <a href="#profil">Profil</a>
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid-line hero-grid-line-1"></div>
+      <div class="hero-grid-line hero-grid-line-2"></div>
+
+      <div class="hero-copy reveal">
+        <div class="hero-kicker">
+          <span class="status-dot"></span>
+          Stage · 26/10/2026 → 02/02/2027
+        </div>
+
+        <h1>
+          GARANCE
+          <span>GUINET</span>
+        </h1>
+
+        <p class="hero-role">Conceptrice développeuse d'applications</p>
+
+        <p class="hero-description">
+          Je conçois et développe des applications de la modélisation des données
+          jusqu'aux API et interfaces web.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projets">Voir mes projets <span>↘</span></a>
+          <a class="btn btn-ghost" href="./assets/docs/CV_Garance_Guinet.pdf" target="_blank">Voir mon CV <span>↗</span></a>
+        </div>
+
+        <div class="hero-links">
+          <a href="https://github.com/GaranceGuinet" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/garance-guinet" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:guinetgarance@laposte.net?subject=Contact%20stage%20CDA">Email</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="portrait-panel">
+          <img src="./assets/images/garance-guinet.jpg" alt="Portrait de Garance Guinet">
+          <div class="portrait-overlay"></div>
+        </div>
+
+        <div class="hero-meta hero-meta-top">
+          <span>PORTFOLIO / 2026</span>
+          <span>MONTPELLIER / FR</span>
+        </div>
+
+        <div class="hero-corner" aria-hidden="true"></div>
+      </div>
+
+    </section>
+
+    <!-- PROFIL -->
+    <section class="section section-light" id="profil">
+      <div class="section-shell profile-layout">
+        <div class="section-heading reveal">
+          <p class="section-label">Profil</p>
+          <h2>Conceptrice développeuse<br><span>d’applications.</span></h2>
+        </div>
+
+        <div class="profile-copy reveal">
+          <p class="lead">
+            En formation <strong>Concepteur Développeur d'Applications chez Diginamic</strong>,
+            je construis progressivement une vision complète du développement :
+            besoin, conception, données, backend, API, interface et tests.
+          </p>
+
+          <p>
+            Ma formation et mes projets m'ont amenée à travailler avec
+            <strong>Java, JPA/Hibernate, Spring, Node.js/Express, SQL/MariaDB,
+            MongoDB et JavaScript</strong>, ainsi qu'avec <strong>UML</strong> pour la conception.
+            J'accorde une attention particulière à la compréhension du besoin,
+            à la structuration des données et à la cohérence du code.
+          </p>
+
+          <p>
+            Avant le développement, mes expériences en relation client, administration
+            et management m'ont confrontée à des volumes de demandes importants,
+            au suivi rigoureux de dossiers et à la coordination avec des interlocuteurs variés.
+          </p>
+
+          <div class="profile-facts">
+            <div>
+              <span>Formation</span>
+              <strong>CDA · RNCP niveau 6 visé</strong>
+            </div>
+            <div>
+              <span>Localisation</span>
+              <strong>Montpellier</strong>
+            </div>
+            <div>
+              <span>Stage</span>
+              <strong>26/10/2026 → 02/02/2027</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects-section" id="projets">
+      <div class="section-shell">
+        <div class="projects-intro reveal">
+          <p class="section-label section-label-dark">Selected work</p>
+          <h2>Projets<br><span>sélectionnés.</span></h2>
+          <p>
+            Deux projets backend et données présentés en détail,
+            complétés par deux réalisations frontend.
+          </p>
+        </div>
+
+        <article class="project-feature project-feature-cinema reveal">
+          <div class="project-index">01</div>
+
+          <div class="project-content">
+            <div class="project-heading">
+              <p>JAVA / DATA / MODEL</p>
+              <h3>Cinema JPA</h3>
+            </div>
+
+            <p class="project-summary">
+              Application Java de modélisation et d'exploitation de données cinématographiques,
+              construite autour d'un modèle métier avec héritage et plusieurs relations JPA.
+            </p>
+
+            <ul class="project-points">
+              <li>Modèle métier avec héritage et relations JPA.</li>
+              <li>Import et transformation de plusieurs jeux de données CSV.</li>
+              <li>Persistance MariaDB, DAO/service et requêtes JPQL.</li>
+              <li><strong>11 tests automatisés.</strong></li>
+            </ul>
+
+            <div class="project-tags">
+              <span>Java 21</span>
+              <span>JPA / Hibernate</span>
+              <span>MariaDB</span>
+              <span>JPQL</span>
+              <span>Maven</span>
+              <span>JUnit</span>
+            </div>
+
+            <div class="project-actions">
+              <a class="btn btn-primary" href="./projects/cinema-jpa.html">Projet détaillé <span>↗</span></a>
+              <a class="inline-link" href="https://github.com/GaranceGuinet/cinema-jpa" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+
+          <div class="project-visual model-visual" aria-hidden="true">
+            <div class="model-node model-film"><b>FILM</b><span>ENTITY / 01</span></div>
+            <div class="model-node model-acteur"><b>ACTEUR</b><span>ENTITY / 02</span></div>
+            <div class="model-node model-role"><b>RÔLE</b><span>RELATION / 03</span></div>
+            <div class="model-node model-genre"><b>GENRE</b><span>ENTITY / 04</span></div>
+
+            <svg viewBox="0 0 700 520">
+              <path d="M350 260 C470 170 535 145 590 125"></path>
+              <path d="M350 260 C460 300 525 350 585 410"></path>
+              <path d="M350 260 C245 335 185 380 120 410"></path>
+              <circle cx="350" cy="260" r="94"></circle>
+              <circle cx="590" cy="125" r="55"></circle>
+              <circle cx="585" cy="410" r="55"></circle>
+              <circle cx="120" cy="410" r="55"></circle>
+            </svg>
+
+            <span class="visual-caption">APERÇU SIMPLIFIÉ DU MODÈLE</span>
+          </div>
+        </article>
+
+        <article class="project-feature project-feature-weather reveal">
+          <div class="project-index">02</div>
+
+          <div class="project-content">
+            <div class="project-heading">
+              <p>NODE.JS / REST / FLOW</p>
+              <h3>Weather API</h3>
+            </div>
+
+            <p class="project-summary">
+              API REST météo développée avec Node.js et Express, de la validation des requêtes
+              jusqu'à la documentation Swagger et aux tests.
+            </p>
+
+            <ul class="project-points">
+              <li>Développement en pair programming.</li>
+              <li>Consultation et gestion de relevés, agrégats par ville et statistiques globales.</li>
+              <li>Stockage CSV, chargement en mémoire, validation et gestion centralisée des erreurs.</li>
+              <li>Swagger/OpenAPI, CLI et <strong>12 tests automatisés.</strong></li>
+            </ul>
+
+            <div class="project-tags">
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>REST</span>
+              <span>Swagger</span>
+              <span>CSV</span>
+              <span>Tests</span>
+            </div>
+
+            <div class="project-actions">
+              <a class="btn btn-primary" href="./projects/weather-api.html">Projet détaillé <span>↗</span></a>
+              <a class="inline-link" href="https://github.com/GaranceGuinet/weather-api" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+
+          <div class="project-visual api-visual" aria-hidden="true">
+            <span class="api-preview-label">EXEMPLES D’ENDPOINTS</span>
+
+            <div class="api-line">
+              <span>GET</span>
+              <code>/releves</code>
+              <i>REST</i>
+            </div>
+            <div class="api-line">
+              <span class="method-post">POST</span>
+              <code>/releves</code>
+              <i>REST</i>
+            </div>
+            <div class="api-line api-line-active">
+              <span class="method-put">PUT</span>
+              <code>/releves/:id</code>
+              <i>REST</i>
+            </div>
+            <div class="api-line">
+              <span class="method-delete">DELETE</span>
+              <code>/releves/:id</code>
+              <i>REST</i>
+            </div>
+            <div class="api-line">
+              <span>GET</span>
+              <code>/stats</code>
+              <i>REST</i>
+            </div>
+
+            <div class="api-flow">
+              <span>ROUTES</span>
+              <b>→</b>
+              <span>CONTROLLERS</span>
+              <b>→</b>
+              <span>SERVICES</span>
+              <b>→</b>
+              <span>REPOSITORIES</span>
+              <b>→</b>
+              <span>CSV</span>
+            </div>
+            <span class="api-model-note">MODEL RELEVÉ · REPRÉSENTATION & VALIDATION</span>
+          </div>
+        </article>
+
+        <div class="secondary-projects">
+          <article class="secondary-project reveal">
+            <div class="secondary-preview real-preview">
+              <img
+                src="https://raw.githubusercontent.com/GaranceGuinet/projectboost-idea-generator/main/assets/images/preview.png"
+                alt="Aperçu de l’interface ProjectBoost"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="secondary-copy">
+              <p class="section-label section-label-dark">JavaScript</p>
+              <h3>ProjectBoost</h3>
+              <p>
+                Générateur d'idées de projets web avec filtres, manipulation du DOM
+                et favoris persistants via localStorage.
+              </p>
+              <div class="secondary-links">
+                <a href="https://garanceguinet.github.io/projectboost-idea-generator/" target="_blank" rel="noopener noreferrer">Démo ↗</a>
+                <a href="https://github.com/GaranceGuinet/projectboost-idea-generator" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="secondary-project reveal">
+            <div class="secondary-preview real-preview">
+              <img
+                src="https://raw.githubusercontent.com/GaranceGuinet/atelier-ceramique/main/assets/images/preview.png"
+                alt="Aperçu du site Atelier Céramique"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="secondary-copy">
+              <p class="section-label section-label-dark">Frontend</p>
+              <h3>Atelier Céramique</h3>
+              <p>
+                Site vitrine multi-pages responsive avec travail sur la structure CSS,
+                l'accessibilité et l'adaptation mobile.
+              </p>
+              <div class="secondary-links">
+                <a href="https://garanceguinet.github.io/atelier-ceramique/" target="_blank" rel="noopener noreferrer">Démo ↗</a>
+                <a href="https://github.com/GaranceGuinet/atelier-ceramique" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section-light" id="competences">
+      <div class="section-shell">
+        <div class="skills-heading reveal">
+          <p class="section-label">Compétences</p>
+          <h2>Compétences<br><span>techniques.</span></h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <span class="skill-number">01</span>
+            <p>Backend</p>
+            <h3>Java 21<br>Spring<br>JPA / Hibernate<br>Node.js / Express</h3>
+            <small>API REST · Maven</small>
+          </article>
+
+          <article class="skill-card reveal">
+            <span class="skill-number">02</span>
+            <p>Données</p>
+            <h3>SQL<br>MariaDB<br>JPQL<br>MongoDB</h3>
+            <small>NoSQL · Modélisation relationnelle</small>
+          </article>
+
+          <article class="skill-card reveal">
+            <span class="skill-number">03</span>
+            <p>Frontend</p>
+            <h3>HTML5<br>CSS3<br>JavaScript</h3>
+            <small>Responsive Design</small>
+          </article>
+
+          <article class="skill-card skill-card-accent reveal">
+            <span class="skill-number">04</span>
+            <p>Conception & qualité</p>
+            <h3>UML<br>JUnit<br>Swagger / OpenAPI<br>Git / GitHub</h3>
+            <small>Architecture applicative · Tests · Méthodes agiles · UX/Maquettage</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARCOURS -->
+    <section class="section journey-section" id="parcours">
+      <div class="section-shell journey-layout">
+        <div class="journey-heading reveal">
+          <p class="section-label section-label-dark">Parcours</p>
+          <h2>Parcours<br><span>et expérience.</span></h2>
+          <p>
+            Avant ma reconversion dans le développement, j'ai acquis plusieurs années
+            d'expérience en relation client, administration et management. Elles renforcent
+            aujourd'hui ma rigueur, mon organisation, ma communication et ma gestion des priorités.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2026 — 2027</span>
+            <div>
+              <p>Formation actuelle</p>
+              <h3>Concepteur Développeur d'Applications — Diginamic</h3>
+              <span>Titre RNCP niveau 6 visé · Java · JPA/Hibernate · Spring · Node.js · JavaScript · SQL/NoSQL · UML · tests · architecture</span>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2025 — 2026</span>
+            <div>
+              <p>Expérience professionnelle</p>
+              <h3>Conseillère clientèle — ENGIE Home Services</h3>
+              <span>Relation client, traitement des demandes et coordination avec différents interlocuteurs.</span>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2024 — 2025</span>
+            <div>
+              <p>Expérience professionnelle</p>
+              <h3>Téléconseillère — Kisio, Montpellier</h3>
+              <span>Relation client à fort volume, analyse des demandes et gestion de situations complexes.</span>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2021 — 2024</span>
+            <div>
+              <p>Expérience professionnelle</p>
+              <h3>Assistante administrative — Valette et Compagnie</h3>
+              <span>Gestion et suivi de dossiers, organisation administrative et coordination.</span>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2019 — 2020</span>
+            <div>
+              <p>Management</p>
+              <h3>Manager — Brice, Polygone Montpellier</h3>
+              <span>Organisation opérationnelle, coordination d'équipe et gestion des priorités.</span>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2019 — 2020</span>
+            <div>
+              <p>Formation professionnelle</p>
+              <h3>Manager d'Unité Marchande — OFIAQ, Montpellier</h3>
+              <span>Formation professionnelle — OFIAQ, Montpellier.</span>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2019</span>
+            <div>
+              <p>Formation professionnelle</p>
+              <h3>Vendeuse Conseil en Magasin — OFIAQ, Montpellier</h3>
+              <span>Formation professionnelle — OFIAQ, Montpellier.</span>
+            </div>
+          </article>
+        </div>
+
+        <p class="journey-other reveal">
+          <span>Autres expériences</span>
+          Hôtesse de caisse — Sephora (2025) ·
+          Réceptionniste — Valette et Compagnie (2021–2022) ·
+          Agent administratif — ERCA (2021) ·
+          Vendeuse conseil — Brice (2019) · Vente (2018).
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="section-shell contact-layout">
+        <div class="contact-copy reveal">
+          <p class="section-label section-label-dark">Contact</p>
+          <h2>Recherche de<br><span>stage.</span></h2>
+          <p>
+            Du 26/10/2026 au 02/02/2027.
+            Basée à Montpellier.
+          </p>
+        </div>
+
+        <div class="contact-actions reveal">
+          <a href="mailto:guinetgarance@laposte.net?subject=Contact%20stage%20CDA">
+            <span>Email</span>
+            <strong>guinetgarance@laposte.net</strong>
+            <b>↗</b>
+          </a>
+
+          <a href="https://www.linkedin.com/in/garance-guinet" target="_blank" rel="noopener noreferrer">
+            <span>LinkedIn</span>
+            <strong>garance-guinet</strong>
+            <b>↗</b>
+          </a>
+
+          <a href="https://github.com/GaranceGuinet" target="_blank" rel="noopener noreferrer">
+            <span>GitHub</span>
+            <strong>GaranceGuinet</strong>
+            <b>↗</b>
+          </a>
+
+          <a href="./assets/docs/CV_Garance_Guinet.pdf" target="_blank">
+            <span>CV</span>
+            <strong>Voir mon CV</strong>
+            <b>↗</b>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Garance Guinet</span>
+    <span>Conceptrice développeuse d'applications</span>
+    <span id="year"></span>
+  </footer>
+</body>
+</html>

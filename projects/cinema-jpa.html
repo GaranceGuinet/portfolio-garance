@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projet détaillé Cinema JPA — Garance Guinet. Modélisation UML, JPA/Hibernate, import CSV, MariaDB, JPQL et tests.">
+  <title>Cinema JPA — Garance Guinet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="case-page">
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">GG</span>
+      <span class="brand-name">Garance Guinet</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="../index.html#projets">← Projets</a>
+      <a href="https://github.com/GaranceGuinet/cinema-jpa" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="case-shell reveal">
+        <p class="case-kicker">Projet détaillé / 01 · Java / Data</p>
+        <h1>Cinema <span>JPA.</span></h1>
+        <p class="case-intro">
+          Application Java permettant de modéliser, importer, persister et interroger
+          des données cinématographiques structurées autour de plusieurs entités et relations JPA.
+        </p>
+
+        <div class="case-stack">
+          <span>Java 21</span>
+          <span>JPA / Hibernate</span>
+          <span>MariaDB</span>
+          <span>JPQL</span>
+          <span>Maven</span>
+          <span>JUnit</span>
+        </div>
+
+        <a class="case-back" href="https://github.com/GaranceGuinet/cinema-jpa" target="_blank" rel="noopener noreferrer">
+          Voir le dépôt GitHub ↗
+        </a>
+      </div>
+    </section>
+
+    <section class="case-section case-section-light compact-case">
+      <div class="case-shell case-grid">
+        <div class="case-side reveal">01 / Contexte & objectif</div>
+        <div class="case-body reveal">
+          <h2>Transformer plusieurs sources CSV en un modèle métier exploitable.</h2>
+          <p>
+            Le projet s'appuie sur plusieurs jeux de données liés au cinéma :
+            films, acteurs, réalisateurs, pays, langues, genres, rôles et lieux.
+            Le travail consiste à reconstruire les relations entre ces données,
+            puis à les persister dans une base relationnelle.
+          </p>
+
+          <div class="case-metrics">
+            <div><strong>Java 21</strong><span>langage principal</span></div>
+            <div><strong>JPA</strong><span>mapping objet-relationnel</span></div>
+            <div><strong>11</strong><span>tests automatisés</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section compact-case">
+      <div class="case-shell case-grid">
+        <div class="case-side reveal">02 / Modélisation du domaine</div>
+        <div class="case-body reveal">
+          <h2>Structurer les entités, l'héritage et les relations.</h2>
+          <p>
+            Le modèle comprend notamment Film, Personne, Acteur, Réalisateur,
+            Rôle, Genre, Langue, Pays, LieuNaissance et LieuTournage.
+            Personne factorise les informations communes aux acteurs et réalisateurs,
+            tandis que Rôle porte la relation entre un film, un acteur et un personnage.
+          </p>
+
+          <div class="evidence-panel evidence-dark" aria-label="Vue simplifiée et vérifiée du mapping JPA">
+            <div class="evidence-header">
+              <span>MAPPING JPA — VUE SIMPLIFIÉE</span>
+              <span>RELATIONS PRINCIPALES</span>
+            </div>
+
+            <div class="verified-model">
+              <div class="model-inheritance">
+                <div class="verified-node">
+                  <strong>Personne</strong>
+                  <span>abstraite · héritage JOINED</span>
+                </div>
+
+                <div class="inheritance-children">
+                  <div class="verified-node">
+                    <strong>Acteur</strong>
+                    <span>hérite de Personne</span>
+                  </div>
+                  <div class="verified-node">
+                    <strong>Réalisateur</strong>
+                    <span>hérite de Personne</span>
+                  </div>
+                </div>
+
+                <div class="verified-relation">
+                  <span>Personne → LieuNaissance</span><b>@ManyToOne</b><span></span>
+                </div>
+              </div>
+
+              <div class="verified-film">
+                <div class="verified-node verified-node-core">
+                  <strong>Film</strong>
+                  <span>entité centrale</span>
+                </div>
+
+                <div class="relation-list">
+                  <div><span>Film ↔ Genre</span><b>@ManyToMany</b></div>
+                  <div><span>Film ↔ Réalisateur</span><b>@ManyToMany</b></div>
+                  <div><span>Film ↔ Acteur · casting principal</span><b>@ManyToMany</b></div>
+                  <div><span>Film → Langue</span><b>@ManyToOne</b></div>
+                  <div><span>Film → Pays</span><b>@ManyToOne</b></div>
+                  <div><span>Film ↔ LieuTournage</span><b>@OneToOne</b></div>
+                </div>
+              </div>
+
+              <div class="verified-role">
+                <div class="verified-node">
+                  <strong>Rôle</strong>
+                  <span>Film · Acteur · personnage</span>
+                </div>
+                <div class="verified-relation">
+                  <span>Film → Rôle</span><b>@OneToMany</b><span></span>
+                </div>
+                <div class="verified-relation">
+                  <span>Acteur → Rôle</span><b>@OneToMany</b><span></span>
+                </div>
+              </div>
+            </div>
+
+            <p class="evidence-note">
+              Vue volontairement simplifiée : elle synthétise les relations JPA principales du projet.
+            </p>
+          </div>
+
+          <a class="case-back evidence-link" href="https://github.com/GaranceGuinet/cinema-jpa/blob/main/conception/01-diagramme-de-classes.png" target="_blank" rel="noopener noreferrer">
+            Voir le diagramme UML complet ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section-light compact-case">
+      <div class="case-shell case-grid">
+        <div class="case-side reveal">03 / Import, persistance & requêtes</div>
+        <div class="case-body reveal">
+          <h2>Faire circuler les données du CSV jusqu'à MariaDB.</h2>
+
+          <div class="pipeline evidence-panel evidence-light" aria-label="Pipeline de traitement des données">
+            <div class="pipeline-step">
+              <span>01</span>
+              <strong>CSV</strong>
+              <small>sources multiples</small>
+            </div>
+            <b>→</b>
+            <div class="pipeline-step">
+              <span>02</span>
+              <strong>Parsing</strong>
+              <small>lecture & transformation</small>
+            </div>
+            <b>→</b>
+            <div class="pipeline-step">
+              <span>03</span>
+              <strong>Entités</strong>
+              <small>relations reconstruites</small>
+            </div>
+            <b>→</b>
+            <div class="pipeline-step">
+              <span>04</span>
+              <strong>JPA / Hibernate</strong>
+              <small>persistance</small>
+            </div>
+            <b>→</b>
+            <div class="pipeline-step">
+              <span>05</span>
+              <strong>MariaDB</strong>
+              <small>base relationnelle</small>
+            </div>
+          </div>
+
+          <ul class="case-list">
+            <li>Organisation des accès via couches DAO et service.</li>
+            <li>Requêtes JPQL utilisées par six recherches console.</li>
+            <li>CRUD console dédié aux genres.</li>
+            <li>11 tests JUnit centrés notamment sur le maintien des relations entre entités.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section compact-case">
+      <div class="case-shell case-grid">
+        <div class="case-side reveal">04 / Résultats & acquis</div>
+        <div class="case-body reveal">
+          <h2>Relier conception UML, modèle objet et base relationnelle.</h2>
+          <p>
+            Ce projet m'a permis de travailler la cohérence entre le modèle métier,
+            les cardinalités, les mappings JPA, la persistance et les requêtes.
+            C'est aujourd'hui l'un de mes projets les plus représentatifs côté conception
+            et données.
+          </p>
+
+          <div class="result-grid">
+            <div><span>Conception</span><strong>UML & cardinalités</strong></div>
+            <div><span>Persistance</span><strong>JPA / Hibernate</strong></div>
+            <div><span>Qualité</span><strong>11 tests JUnit</strong></div>
+          </div>
+
+          <a class="btn btn-primary" href="../index.html#projets">Retour aux projets <span>↖</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projet détaillé Weather API — Garance Guinet. Node.js, Express, API REST, Swagger/OpenAPI, CSV, CLI et tests.">
+  <title>Weather API — Garance Guinet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="case-page">
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">GG</span>
+      <span class="brand-name">Garance Guinet</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="../index.html#projets">← Projets</a>
+      <a href="https://github.com/GaranceGuinet/weather-api" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="case-shell reveal">
+        <p class="case-kicker">Projet détaillé / 02 · Node.js / REST</p>
+        <h1>Weather <span>API.</span></h1>
+        <p class="case-intro">
+          API REST météo développée en pair programming avec Node.js et Express :
+          endpoints, validation, stockage CSV, documentation, CLI et tests.
+        </p>
+
+        <div class="case-stack">
+          <span>Node.js</span>
+          <span>Express</span>
+          <span>REST</span>
+          <span>Swagger / OpenAPI</span>
+          <span>CSV</span>
+          <span>Tests</span>
+        </div>
+
+        <a class="case-back" href="https://github.com/GaranceGuinet/weather-api" target="_blank" rel="noopener noreferrer">
+          Voir le dépôt GitHub ↗
+        </a>
+      </div>
+    </section>
+
+    <section class="case-section case-section-light compact-case">
+      <div class="case-shell case-grid">
+        <div class="case-side reveal">01 / Objectif & périmètre</div>
+        <div class="case-body reveal">
+          <h2>Exposer des données météo via une API REST structurée.</h2>
+          <p>
+            L'API permet de consulter les relevés, les villes disponibles,
+            les données d'une ville, des statistiques et l'état du service.
+            Le projet couvre également la validation, les erreurs, la documentation
+            et le stockage CSV. Les données sont chargées en mémoire au démarrage,
+            puis le fichier est réécrit lors des modifications.
+          </p>
+
+          <div class="case-metrics">
+            <div><strong>REST</strong><span>contrat d'API</span></div>
+            <div><strong>Swagger</strong><span>documentation</span></div>
+            <div><strong>12</strong><span>tests automatisés</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section compact-case">
+      <div class="case-shell case-grid">
+        <div class="case-side reveal">02 / Architecture & responsabilités</div>
+        <div class="case-body reveal">
+          <h2>Séparer les étapes d'une requête pour garder l'API lisible.</h2>
+
+          <div class="evidence-panel evidence-dark api-architecture" aria-label="Architecture principale de Weather API">
+            <div class="evidence-header">
+              <span>FLUX PRINCIPAL D’UNE REQUÊTE</span>
+              <span>NODE.JS / EXPRESS</span>
+            </div>
+
+            <div class="architecture-row verified-weather-architecture">
+              <div class="architecture-box">
+                <span>01</span><strong>Routes</strong><small>endpoints HTTP</small>
+              </div>
+              <b>→</b>
+              <div class="architecture-box">
+                <span>02</span><strong>Controllers</strong><small>requêtes · réponses</small>
+              </div>
+              <b>→</b>
+              <div class="architecture-box">
+                <span>03</span><strong>Services</strong><small>logique métier</small>
+              </div>
+              <b>→</b>
+              <div class="architecture-box architecture-box-accent">
+                <span>04</span><strong>Repositories</strong><small>accès · persistance</small>
+              </div>
+              <b>→</b>
+              <div class="architecture-box">
+                <span>05</span><strong>CSV</strong><small>stockage des relevés</small>
+              </div>
+            </div>
+
+            <div class="architecture-support architecture-support-five">
+              <div><span>MODEL RELEVÉ</span><strong>Représentation & validation</strong></div>
+              <div><span>MIDDLEWARE</span><strong>Erreurs centralisées</strong></div>
+              <div><span>LOGGING</span><strong>Requêtes HTTP</strong></div>
+              <div><span>DOC</span><strong>Swagger / OpenAPI</strong></div>
+              <div><span>CLIENT</span><strong>CLI indépendant</strong></div>
+            </div>
+          </div>
+
+          <p>
+            Le développement a été réalisé principalement en pair programming,
+            avec décisions techniques, relectures et ajustements partagés.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section-light compact-case">
+      <div class="case-shell case-grid">
+        <div class="case-side reveal">03 / Endpoints & documentation</div>
+        <div class="case-body reveal">
+          <h2>Des endpoints dédiés aux principaux cas d'usage.</h2>
+
+          <div class="openapi-panel" aria-label="Résumé vérifié des endpoints de l'API">
+            <div class="openapi-title">
+              <strong>Weather API</strong>
+              <span>OpenAPI</span>
+            </div>
+
+            <div class="endpoint-row"><span class="method">GET</span><code>/releves</code><small>liste des relevés</small></div>
+            <div class="endpoint-row"><span class="method">GET</span><code>/releves/:id</code><small>relevé par identifiant</small></div>
+            <div class="endpoint-row"><span class="method method-post">POST</span><code>/releves</code><small>création</small></div>
+            <div class="endpoint-row"><span class="method method-put">PUT</span><code>/releves/:id</code><small>modification</small></div>
+            <div class="endpoint-row"><span class="method method-delete">DELETE</span><code>/releves/:id</code><small>suppression</small></div>
+            <div class="endpoint-row"><span class="method">GET</span><code>/villes</code><small>liste des villes</small></div>
+            <div class="endpoint-row"><span class="method">GET</span><code>/villes/:ville</code><small>agrégats d'une ville</small></div>
+            <div class="endpoint-row endpoint-highlight"><span class="method">GET</span><code>/stats</code><small>statistiques globales</small></div>
+            <div class="endpoint-row"><span class="method">GET</span><code>/healthcheck</code><small>état du service</small></div>
+            <div class="endpoint-row"><span class="method doc-method">DOC</span><code>/api-docs</code><small>Swagger / OpenAPI</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section compact-case">
+      <div class="case-shell case-grid">
+        <div class="case-side reveal">04 / Tests & acquis</div>
+        <div class="case-body reveal">
+          <h2>Vérifier le comportement de l'API et documenter son contrat.</h2>
+          <p>
+            Weather API m'a permis de travailler autant l'implémentation que
+            le contrat exposé : routes, erreurs, validation, persistance,
+            documentation et comportements vérifiés par 12 tests utilisant le module natif de Node.js.
+          </p>
+
+          <div class="result-grid">
+            <div><span>Collaboration</span><strong>Pair programming</strong></div>
+            <div><span>Documentation</span><strong>Swagger / OpenAPI</strong></div>
+            <div><span>Qualité</span><strong>12 tests</strong></div>
+          </div>
+
+          <a class="btn btn-primary" href="../index.html#projets">Retour aux projets <span>↖</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
